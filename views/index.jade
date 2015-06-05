@@ -16,6 +16,7 @@ block main
                 h3.no-bottom-margin
                     | Status 
                     span(class='label label-primary') {{status_test}}
+                    // Changing status to status_test --> Status is pulled from server.js and main.js to be shown on index.jade
                 .drop
                     // start_from_button is the name of the "button" function, located on/in the index.jade page.
                     // it is called/used in the main.js to execute the "socket.emit('start_from_mainjs');" function
