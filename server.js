@@ -26,7 +26,7 @@ cp.on('message', function (message) {
 io.sockets.on('connection', function (socket) {
     socket.emit('status', { message: "Connected" });
 // start --> ticker.js " if (msg.op === 'startNOW') { ticker.execute();} " the function in the ticker.js listens for the op: msg "
-    socket.on('start', function (data) {
+    socket.on('start_from_mainjs', function (data) {
 // You can change the op: XXX to whatever you want, just remember to change the function in ticker.js
         cp.send({ op: 'startNOW' });
 // Emit the status in socket.io (Connected, Processing, Stopped )
