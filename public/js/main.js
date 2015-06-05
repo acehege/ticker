@@ -17,7 +17,7 @@ app.controller('updateController', function ($scope, socket) {
         socket.emit('start_from_mainjs');
     };
 // --> You can change the socket.emit XXX value to whatever you want, just remember to change the value in both ticker.js and main.js 
-    $scope.stop = function () {
+    $scope.stop_from_button = function () {
         socket.emit('stop_from_mainjs');
     };
 // --> You can change the socket.emit XXX value to whatever you want, just remember to change the value in both ticker.js and main.js 
