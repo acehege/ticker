@@ -26,11 +26,11 @@ cp.on('message', function (message) {
 io.sockets.on('connection', function (socket) {
     socket.emit('status', { message: "Testing status - OK" });
     socket.on('start', function (data) {
-        cp.send({ op: 'start' });
+        cp.send({ op: 'startNOW' });
         socket.emit('status', { message: "Processing" });
     });
     socket.on('stop', function (data) {
-        cp.send({ op: 'stop' });
+        cp.send({ op: 'stopNOW' });
         socket.emit('status', { message: "Stopped" });
     });
     socket.on('buy', function (data) {
