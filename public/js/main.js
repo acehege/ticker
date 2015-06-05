@@ -12,8 +12,7 @@ app.controller('updateController', function ($scope, socket) {
         { name: "Test002", price: 867.75 }
     ];
     
-// the first value in ( socket.on ) is from main.js, "$scope.start = function () {socket.emit('start_from_mainjs');};"
-// --> You can change the socket.emit XXX to whatever you want, just remember to change the value in ticker.js and main.js
+// --> You can change the socket.emit XXX value to whatever you want, just remember to change the value in both ticker.js and main.js 
     $scope.start = function () {
         socket.emit('start_from_mainjs');
     };
