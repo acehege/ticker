@@ -13,7 +13,7 @@ app.controller('updateController', function ($scope, socket) {
     ];
 
     $scope.start = function () {
-        socket.emit('start');
+        socket.emit('start_from_mainjs');
     };
 
     $scope.stop = function () {
