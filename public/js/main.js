@@ -27,7 +27,7 @@ app.controller('updateController', function ($scope, socket) {
     $scope.buy_from_button = function (element) {
         socket.emit('buy_from_mainjs', element.name);
     };
-
+// Changing status to status_test --> Status is pulled from server.js and main.js to be shown on index.jade
     socket.on('status_test', function (data) {
         $scope.status_test = data.message;
     });
