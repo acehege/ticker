@@ -34,7 +34,7 @@ var ticker = new Ticker({
         { name: "Apple", price: 14.50 },
         { name: "Microsoft", price: 43.00 },
         { name: "Facebook", price: 37.75 },
-// Added two extra stock options to see how it affects the page
+// Added two extra stock options to see how it affects the page --> If you only add the stocks here, they only show up when the ticker is running.
         { name: "Test001", price: 56.75 },
         { name: "Test002", price: 867.75 }
     ]
