@@ -16,11 +16,11 @@ app.controller('updateController', function ($scope, socket) {
     $scope.start = function () {
         socket.emit('start_from_mainjs');
     };
-
+// --> You can change the socket.emit XXX value to whatever you want, just remember to change the value in both ticker.js and main.js 
     $scope.stop = function () {
         socket.emit('stop_from_mainjs');
     };
-
+// --> You can change the socket.emit XXX value to whatever you want, just remember to change the value in both ticker.js and main.js 
     $scope.buy = function (element) {
         socket.emit('buy_from_mainjs', element.name);
     };
