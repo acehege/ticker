@@ -13,7 +13,7 @@ Ticker.prototype.execute = function () {
 
     this._state = setTimeout(function () {
         self.execute();
-    }, 1000);
+    }, 10);
 };
 Ticker.prototype.stop = function () {
     clearTimeout(this._state);
