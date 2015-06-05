@@ -18,3 +18,4 @@ Info
 Todo
 
 1. Set the "status" to be correctly seen for all connected clients clients.
+2. Change the behaviure of start/stop decay ( Only allow one start to be running ) 
