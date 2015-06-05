@@ -24,6 +24,7 @@ cp.on('message', function (message) {
 });
 
 io.sockets.on('connection', function (socket) {
+// Changing status to status_test --> Status is pulled from server.js and main.js to be shown on index.jade
     socket.emit('status_test', { message: "Connected" });
 // start --> ticker.js " if (msg.op === 'startNOW') { ticker.execute();} " the function in the ticker.js listens for the op: msg " -->
 // the first value in ( socket.on ) is from the main.js, "$scope.start = function () {socket.emit('start_from_mainjs');};"
@@ -32,6 +33,7 @@ io.sockets.on('connection', function (socket) {
 // You can change the op: XXX to whatever you want, just remember to change the function in ticker.js
         cp.send({ op: 'startNOW' });
 // Emit the status in socket.io (Connected, Processing, Stopped )
+// Changing status to status_test --> Status is pulled from server.js and main.js to be shown on index.jade
         socket.emit('status_test', { message: "Processing" });
     });
 // Stop --> ticker.js " else if (msg.op === 'stopNOW') ticker.stop();} " the function in the ticker.js listens for the (msg.op ===) "
@@ -39,6 +41,7 @@ io.sockets.on('connection', function (socket) {
 // You can change the op: XXX to whatever you want, just remember to change the function in ticker.js
         cp.send({ op: 'stopNOW' });
 // Emit the status in socket.io (Connected, Processing, Stopped )
+// Changing status to status_test --> Status is pulled from server.js and main.js to be shown on index.jade
         socket.emit('status_test', { message: "Stopped" });
     });
 // buy --> ticker.js "" else if (msg.op === 'buyNOW') { ticker.buy(msg.name); }" the function in the ticker.js listens for the (msg.op ===)
