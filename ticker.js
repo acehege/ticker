@@ -40,6 +40,7 @@ var ticker = new Ticker({
         { name: "Test002", price: 867.75 }
     ]
 });
+// Note to self, this is how i can call python-shell and run the scripts
 process.on('message', function (msg) {
     if (msg.op === 'startNOW') {
         ticker.execute();
