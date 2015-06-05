@@ -24,7 +24,7 @@ cp.on('message', function (message) {
 });
 
 io.sockets.on('connection', function (socket) {
-    socket.emit('status', { message: "EHLO OK Connected" });
+    socket.emit('status', { message: "Testing status - OK" });
     socket.on('start', function (data) {
         cp.send({ op: 'start' });
         socket.emit('status', { message: "Processing" });
