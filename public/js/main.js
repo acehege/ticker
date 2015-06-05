@@ -23,6 +23,7 @@ app.controller('updateController', function ($scope, socket) {
         socket.emit('stop_from_mainjs');
     };
 // --> You can change the socket.emit XXX value to whatever you want, just remember to change the value in both ticker.js and main.js 
+// buy_from_button is the name of the "button" function, located on/in the index.jade page.
     $scope.buy_from_button = function (element) {
         socket.emit('buy_from_mainjs', element.name);
     };
