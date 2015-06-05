@@ -37,13 +37,13 @@ var ticker = new Ticker({
     ]
 });
 process.on('message', function (msg) {
-    if (msg.op === 'start') {
+    if (msg.op === 'startNOW') {
         ticker.execute();
     }
-    else if (msg.op === 'stop') {
+    else if (msg.op === 'stopNOW') {
         ticker.stop();
     }
-    else if (msg.op === 'buy') {
+    else if (msg.op === 'buyNOW') {
         ticker.buy(msg.name);
     }
 });
