@@ -35,7 +35,7 @@ io.sockets.on('connection', function (socket) {
         socket.emit('status', { message: "Processing" });
     });
 // Stop --> ticker.js " else if (msg.op === 'stopNOW') ticker.stop();} " the function in the ticker.js listens for the (msg.op ===) "
-    socket.on('stop', function (data) {
+    socket.on('stop_from_mainjs', function (data) {
 // You can change the op: XXX to whatever you want, just remember to change the function in ticker.js
         cp.send({ op: 'stopNOW' });
 // Emit the status in socket.io (Connected, Processing, Stopped )
@@ -43,7 +43,7 @@ io.sockets.on('connection', function (socket) {
     });
 // buy --> ticker.js "" else if (msg.op === 'buyNOW') { ticker.buy(msg.name); }" the function in the ticker.js listens for the (msg.op ===)
 // --> in this case the "buy" function. This calls the Ticker.prototype.buy 
-    socket.on('buy', function (data) {
+    socket.on('buy_from_mainjs', function (data) {
         cp.send({ op: 'buyNOW', name: data });
     });
 });
