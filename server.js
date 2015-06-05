@@ -25,6 +25,7 @@ cp.on('message', function (message) {
 
 io.sockets.on('connection', function (socket) {
     socket.emit('status', { message: "Testing status - OK" });
+// socket.on --> ticker.js " if (msg.op === 'startNOW') { ticker.execute();} " So the function in the ticker.js listens for the op: msg "
     socket.on('start', function (data) {
         cp.send({ op: 'startNOW' });
         socket.emit('status', { message: "Processing" });
