@@ -5,7 +5,11 @@ app.controller('updateController', function ($scope, socket) {
     $scope.stocks = [
         { name: "Apple", price: 4.50 },
         { name: "Microsoft", price: 4.00 },
-        { name: "Facebook", price: 3.75 }
+        { name: "Facebook", price: 3.75 },
+// Added two extra stock options to see how it affects the page --> If you only add the stocks in the ticker.js, they only show up when the ticker is running.
+// --> you need to change the main.js in the public folder, since the names are hardcoded.
+        { name: "Test001", price: 56.75 },
+        { name: "Test002", price: 867.75 }
     ];
 
     $scope.start = function () {
