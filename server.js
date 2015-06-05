@@ -24,16 +24,23 @@ cp.on('message', function (message) {
 });
 
 io.sockets.on('connection', function (socket) {
-    socket.emit('status', { message: "Testing status - OK" });
-// socket.on --> ticker.js " if (msg.op === 'startNOW') { ticker.execute();} " So the function in the ticker.js listens for the op: msg "
+    socket.emit('status', { message: "Connected" });
+// start --> ticker.js " if (msg.op === 'startNOW') { ticker.execute();} " the function in the ticker.js listens for the op: msg "
     socket.on('start', function (data) {
+// You can change the op: XXX to whatever you want, just remember to change the function in ticker.js
         cp.send({ op: 'startNOW' });
+// Emit the status in socket.io (Connected, Processing, Stopped )
         socket.emit('status', { message: "Processing" });
     });
+// Stop --> ticker.js " else if (msg.op === 'stopNOW') ticker.stop();} " the function in the ticker.js listens for the (msg.op ===) "
     socket.on('stop', function (data) {
+// You can change the op: XXX to whatever you want, just remember to change the function in ticker.js
         cp.send({ op: 'stopNOW' });
+// Emit the status in socket.io (Connected, Processing, Stopped )
         socket.emit('status', { message: "Stopped" });
     });
+// buy --> ticker.js "" else if (msg.op === 'buyNOW') { ticker.buy(msg.name); }" the function in the ticker.js listens for the (msg.op ===)
+// --> in this case the "buy" function. This calls the Ticker.prototype.buy 
     socket.on('buy', function (data) {
         cp.send({ op: 'buyNOW', name: data });
     });
