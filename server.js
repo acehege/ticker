@@ -24,7 +24,6 @@ cp.on('message', function (message) {
 });
 
 io.sockets.on('connection', function (socket) {
-    socket.emit('status', { message: "Connected" });
     socket.emit('statusTEST', { message: "ConnectedTEST" });
 // start --> ticker.js " if (msg.op === 'startNOW') { ticker.execute();} " the function in the ticker.js listens for the op: msg " -->
 // the first value in ( socket.on ) is from the main.js, "$scope.start = function () {socket.emit('start_from_mainjs');};"
