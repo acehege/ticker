@@ -26,14 +26,17 @@ Ticker.prototype.buy = function (name) {
             p.price += p.price / self._growth;
     });
 };
-
+// 
 var ticker = new Ticker({
     growth: 10.0,
     decay: 1800.0,
     stocks: [
         { name: "Apple", price: 14.50 },
         { name: "Microsoft", price: 43.00 },
-        { name: "Facebook", price: 37.75 }
+        { name: "Facebook", price: 37.75 },
+// Added two extra stock options to see how it affects the page
+        { name: "Test001", price: 56.75 },
+        { name: "Test002", price: 867.75 }
     ]
 });
 process.on('message', function (msg) {
