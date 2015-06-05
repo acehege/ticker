@@ -15,8 +15,8 @@ app.get('/', function(req, res){
 	res.render('index');
 });
 
-server.listen(process.env.PORT || 4561);
-console.log('listening on' + process.env.PORT || 4561);
+server.listen(process.env.PORT || 3000);
+console.log('listening on' + process.env.PORT || 3000);
 
 var cp = require('child_process').fork('ticker');
 cp.on('message', function (message) {
