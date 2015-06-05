@@ -28,8 +28,8 @@ app.controller('updateController', function ($scope, socket) {
         socket.emit('buy_from_mainjs', element.name);
     };
 
-    socket.on('status', function (data) {
-        $scope.status = data.message;
+    socket.on('status_test', function (data) {
+        $scope.status_test = data.message;
     });
 
     socket.on('update', function (data) {
