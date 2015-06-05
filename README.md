@@ -10,3 +10,8 @@ http://www.carbonatethis.com/push-notifications-from-a-child-process-using-node-
 ======
 1. Going to add comments to all the code 
 2. Use as a learning experince for use with my own nodejs app.
+
+
+====== Todo
+
+1. Set the "status" to be correctly seen for all connected clients clients.
