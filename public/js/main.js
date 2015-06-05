@@ -11,17 +11,19 @@ app.controller('updateController', function ($scope, socket) {
         { name: "Test001", price: 56.75 },
         { name: "Test002", price: 867.75 }
     ];
-
+    
+// the first value in ( socket.on ) is from main.js, "$scope.start = function () {socket.emit('start_from_mainjs');};"
+// --> You can change the socket.emit XXX to whatever you want, just remember to change the value in ticker.js and main.js
     $scope.start = function () {
-        socket.emit('start_from_mainjsTEST');
+        socket.emit('start_from_mainjs');
     };
 
     $scope.stop = function () {
-        socket.emit('stop');
+        socket.emit('stop_from_mainjs');
     };
 
     $scope.buy = function (element) {
-        socket.emit('buy', element.name);
+        socket.emit('buy_from_mainjs', element.name);
     };
 
     socket.on('status', function (data) {
