@@ -1,6 +1,6 @@
 var PythonShell = require('python-shell');
 var options = {
-  scriptPath: 'python/'
+  scriptPath: '/home/acehege/ticker/public/python/'
 };
 function Ticker(opt) {
     this._decay = opt.decay;
