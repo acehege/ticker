@@ -9,7 +9,7 @@ function Ticker(opt) {
     this._state = null;
 };
 Ticker.prototype.execute = function () {
-PythonShell.run('hello.py', function (err) {
+PythonShell.run('/python/hello.py', function (err) {
   if (err) throw err;
   console.log('finished');
 });
