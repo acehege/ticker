@@ -12,7 +12,7 @@ Ticker.prototype.execute = function () {
 //( see more info regarding python-shell here: https://www.npmjs.com/package/python-shell )
 PythonShell.run('/hello.py', function (err) {
   if (err) throw err;
-  console.log('finished');
+  console.log('Hello.py script has been executed from a button-call');
 });
 };
 Ticker.prototype.stop = function () {
