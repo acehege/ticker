@@ -3,7 +3,6 @@ var jade = require('jade'),
 	app = express(),
     server = require('http').createServer(app),
 	io = require('socket.io').listen(server);
-var PythonShell = require('python-shell');
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
