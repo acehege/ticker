@@ -1,7 +1,4 @@
 var PythonShell = require('python-shell');
-var options = {
-  scriptPath: '/home/acehege/ticker/public/python'
-};
 function Ticker(opt) {
     this._decay = opt.decay;
     this._growth = opt.growth;
@@ -9,9 +6,6 @@ function Ticker(opt) {
     this._state = null;
 };
 Ticker.prototype.execute = function () {
-var options = {
-scriptPath: '/home/acehege/ticker/public/python'
-};
 PythonShell.run('/hello.py', function (err) {
   if (err) throw err;
   console.log('finished');
