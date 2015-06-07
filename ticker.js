@@ -5,15 +5,10 @@ function Ticker(opt) {
     this._state = null;
 };
 Ticker.prototype.execute = function () {
-    var self = this;
-    this._stocks.forEach(function (p, i) {
-        p.price -= p.price / self._decay;
-    });
-    process.send({ stocks: this._stocks });
-
-    this._state = setTimeout(function () {
-        self.execute();
-    }, 1000);
+PythonShell.run('hello.py', function (err) {
+  if (err) throw err;
+  console.log('finished');
+});
 };
 Ticker.prototype.stop = function () {
     clearTimeout(this._state);
