@@ -12,6 +12,7 @@ Ticker.prototype.execute = function () {
 //( see more info regarding python-shell here: https://www.npmjs.com/package/python-shell )
 PythonShell.run('/hello.py', function (err) {
   if (err) throw err;
+// This is the console output on the node commandline
   console.log('Hello.py script has been executed from a button-call');
 });
 };
