@@ -1,3 +1,4 @@
+// Adding python-shell to allow python scripts to be called.
 var PythonShell = require('python-shell');
 function Ticker(opt) {
     this._decay = opt.decay;
@@ -5,7 +6,10 @@ function Ticker(opt) {
     this._stocks = opt.stocks;
     this._state = null;
 };
+// Testing the execute ( start button ) function, so python scripts can be called and run from the webinterface
 Ticker.prototype.execute = function () {
+//Run the hello.py script located in the python folder at the base of ticker
+//( see more info regarding python-shell here: https://www.npmjs.com/package/python-shell )
 PythonShell.run('/hello.py', function (err) {
   if (err) throw err;
   console.log('finished');
