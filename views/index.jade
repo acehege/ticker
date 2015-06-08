@@ -33,7 +33,15 @@ block main
                               .embed-responsive.embed-responsive-16by9
                                 iframe(width='853', height='480', src='//www.youtube.com/embed/T9-OWfS2Vy4', frameborder='0', allowfullscreen='')
 
+            $(function () {
 
+                $('.toggle').click(function (event) {
+                    event.preventDefault();
+                    var target = $(this).attr('href');
+                    $(target).toggleClass('hidden show');
+                });
+            
+                });
             .col-sm-6
                 ul(class='list-group')
                     li(class='list-group-item', ng-repeat='s in stocks')
