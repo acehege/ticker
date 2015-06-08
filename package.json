@@ -8,5 +8,6 @@
     "jade": "*",
     "socket.io": "*",
     "socket.io-client": "*"
+    "python-shell": "*"
   }
 }
