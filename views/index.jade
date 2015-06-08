@@ -23,6 +23,9 @@ block main
                     // stop_from_button is the name of the "button" function, located on/in the index.jade page.
                     // it is called/used in the main.js to execute the "socket.emit('stop_from_mainjs');" function
                     button(type='button', class='btn btn-danger' ng-click='stop_from_button()') Stop script
+                    <a class="btn btn-large btn-success" id="fire" href="http://twitter.github.io/bootstrap/examples/marketing-narrow.html#">Send Email</a>
+
+                    $('#fire').on('click', function (e) { })
 
             .col-sm-6
                 ul(class='list-group')
