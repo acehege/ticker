@@ -32,7 +32,12 @@ block main
                               |     
                               .embed-responsive.embed-responsive-16by9
                                 iframe(width='853', height='480', src='//www.youtube.com/embed/T9-OWfS2Vy4', frameborder='0', allowfullscreen='')
-
+                    $(function () {
+                    $('.toggle').click(function (event) {
+                    event.preventDefault();
+                    var target = $(this).attr('href');
+                    $(target).toggleClass('hidden show');
+                    });});
 
             .col-sm-6
                 ul(class='list-group')
@@ -42,10 +47,4 @@ block main
                         // buy_from_button is the name of the "button" function, located on/in the index.jade page.
                         // it is called/used in the main.js to execute the "socket.emit('buy_from_mainjs');" function
                         button(type='button', class='btn btn-xs indent', ng-click='buy_from_button(s)') Buy
-$(function () {
 
-$('.toggle').click(function (event) {
-event.preventDefault();
-var target = $(this).attr('href');
-$(target).toggleClass('hidden show');
-});});
