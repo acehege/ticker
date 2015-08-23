@@ -1,6 +1,7 @@
-var app = angular.module('stockStatusModule', []);
+var app = angular.module('stockStatusModule', ['ngAnimate', 'ui.bootstrap']);
 
 app.controller('updateController', function ($scope, socket) {
+    $scope.isCollapsed = false;
     $scope.status = 'AngularJS successfully loaded.';
     $scope.stocks = [
         { name: "Apple", price: 4.50 },
@@ -27,6 +28,10 @@ app.controller('updateController', function ($scope, socket) {
     $scope.buy_from_button = function (element) {
         socket.emit('buy_from_mainjs', element.name);
     };
+
+        $scope.ssh_from_button = function () {
+        socket.emit('ssh_from_mainjs');
+    };
 // Changing status to status_test --> Status is pulled from server.js and main.js to be shown on index.jade
     socket.on('status_test', function (data) {
         $scope.status_test = data.message;
@@ -35,7 +40,13 @@ app.controller('updateController', function ($scope, socket) {
     socket.on('update', function (data) {
         $scope.stocks = data.stocks;
     });
+
         
+});
+
+app.controller('updateController2', function ($scope, socket) {
+    $scope.isCollapsed = false;
+
 });
 
 app.factory('socket', function ($rootScope) {
@@ -61,3 +72,5 @@ app.factory('socket', function ($rootScope) {
         }
     };
 });
+
+

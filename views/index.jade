@@ -1,6 +1,6 @@
 extends layout
 block main
-    div(class='col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2', ng-controller='updateController')
+    div(class='col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2', ng-controller="updateController")
         p.
             In this example, we have a constant ongoing process that Node is monitoring. For our purposes,
             we are just going to simulate stock prices. Now instead of the user initiating the request
@@ -23,16 +23,11 @@ block main
                     // stop_from_button is the name of the "button" function, located on/in the index.jade page.
                     // it is called/used in the main.js to execute the "socket.emit('stop_from_mainjs');" function
                     button(type='button', class='btn btn-danger' ng-click='stop_from_button()') Stop script
-                    a.toggle.btn.btn-primary(href='#credits') Click on me to reveal the hidden treasure
-                          #credits.well.hidden
-                              h1 I&apos;m the hidden treasure :)
-                              |     
-                              p
-                                | Whilst most Japanese people are aware of English swear words and want to know more, they&apos;re not quite sure on how they&apos;re used and the role they play.
-                              |     
-                              .embed-responsive.embed-responsive-16by9
-                                iframe(width='853', height='480', src='//www.youtube.com/embed/T9-OWfS2Vy4', frameborder='0', allowfullscreen='')
-                                });
+                    button(type='button', class='btn btn-success' ng-click='ssh_from_button()') SSH script
+
+                    
+
+                    
             .col-sm-6
                 ul(class='list-group')
                     li(class='list-group-item', ng-repeat='s in stocks')
@@ -42,3 +37,19 @@ block main
                         // it is called/used in the main.js to execute the "socket.emit('buy_from_mainjs');" function
                         button(type='button', class='btn btn-xs indent', ng-click='buy_from_button(s)') Buy
 
+    // Create multiple ng-controller(s) by adding a new div
+    div(class='col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2', ng-controller="updateController2")
+            p.
+                
+                
+            .alert.alert-info Open multiple browser windows to get the full effect.
+            .well.clearfix
+                .col-sm-6
+                    h3.no-bottom-margin
+
+                    .drop
+
+                        button.btn.btn-default(type='button', ng-click='isCollapsed = !isCollapsed') Toggle collapse
+                          div(collapse='!isCollapsed')
+                            .well.well-lg LALALA
+                                

@@ -48,4 +48,10 @@ io.sockets.on('connection', function (socket) {
     socket.on('buy_from_mainjs', function (data) {
         cp.send({ op: 'buyNOW', name: data });
     });
+
+// SSH
+    socket.on('ssh_from_mainjs', function (data) {
+        cp.send({ op: 'sshNOW', name: data });
+    });
+
 });

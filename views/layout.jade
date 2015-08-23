@@ -1,9 +1,17 @@
 !!!5
-html(ng-app="stockStatusModule")
+html(ng-app="stockStatusModule",)
     head
         title Ticker
-        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
         link(rel='stylesheet', href='/css/main.css')
+        script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js')
+        script(src='/socket.io/socket.io.js')
+        script(src='/js/main.js')
+        script(src='/js/ui-bootstrap.js')
+        script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js')
+        script(src='//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js')
+
+
 
     body
         div(class='container')
@@ -11,21 +19,10 @@ html(ng-app="stockStatusModule")
                 header(class='col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2')
                     h1 Synchronized Push Notifications
                         br
-                        small using Node, AngularJS, and Socket.IO
+                        small using Node, AngularJS, UI Bootstrap, Python-shell, and Socket.IO
                 main(role='main')
                     block main
                 footer(class='col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2')
                     p 
-                        | Created by Charlie Brown 
-                        a(href='http://www.carbonatethis.com/') www.carbonatethis.com
-                    p
-                        small
-                            | Thanks to 
-                            a(href='http://stackoverflow.com/users/1026459/travis-j') travis-j 
-                            | and 
-                            a(href='http://stackoverflow.com/users/785745/kendall-frey') Kendall Frey 
-                            | for help with various bits and pieces.
-
-    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
-    script(src='/socket.io/socket.io.js')
-    script(src='/js/main.js')
+                        | Created by Charlie Brown, forked by Loke Johannessen 
+                        a(href='http://www.jconsulting.dk/') www.jconsulting.dk

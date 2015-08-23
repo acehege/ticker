@@ -10,3 +10,5 @@ h3 span.label {
 .indent {
     margin-left: 20px;
 }
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
